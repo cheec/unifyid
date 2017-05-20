@@ -13,12 +13,13 @@ def request_random(num, min_val, max_val):
         'format': 'plain',
         'rnd': 'new'
     }
+    
     req = requests.get('http://random.org./integers/', params=payload)
-    if req.status_code != 200:
+    if req.status_code != 200: # TODO: quota checking before polling
         print('Error requesting bits. (' + str(req.status_code) + ')')
         exit(1)
         
-    return np.asarray(req.text.split())
+    return np.asarray(int(x) for x in req.text.split())
 
 nx = ny = 128
 min_rgb = 0
