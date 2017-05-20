@@ -14,6 +14,10 @@ def request_random(num, min_val, max_val):
         'rnd': 'new'
     }
     req = requests.get('http://random.org./integers/', params=payload)
+    if req.status_code != 200:
+        print('Error requesting bits. (' + str(req.status_code) + ')')
+        exit(1)
+        
     return np.asarray(req.text.split())
 
 nx = ny = 128
