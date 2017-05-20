@@ -22,7 +22,7 @@ def request_random(num, min_val, max_val):
 
 nx = ny = 128
 min_rgb = 0
-max_rgb = 2 ** 24 - 1  # rgb hex (6 bytes)
+max_rgb = 2 ** 24 - 1  # rgb hex (3 bytes)
 
 if __name__ == "__main__":
     random_rgb = request_random(nx * ny / 2, min_rgb, max_rgb)
