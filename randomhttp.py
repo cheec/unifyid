@@ -14,7 +14,7 @@ def request_random(num, min_val, max_val):
         'rnd': 'new'
     }
     
-    req = requests.get('http://random.org./integers/', params=payload)
+    req = requests.get('https://www.random.org/integers/', params=payload)
     if req.status_code != 200: # TODO: quota checking before polling
         print('Error requesting bits. (' + str(req.status_code) + ')')
         exit(1)
